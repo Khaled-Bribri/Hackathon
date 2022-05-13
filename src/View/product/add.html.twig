@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+<h1>add product {{ product.id }}</h1>
+<form action="/products/addproduct" method="POST">
+    <input type="hidden"  name="id">
+    <input type="text" value="{{ Product.name }}" name="name">
+	<label for="text">name</label>
+	<input type="text" name="DateExpiration">
+	<label for="text">date</label>
+	<button type="submit">Submit</button>
+</form>
+
+{% endblock %}

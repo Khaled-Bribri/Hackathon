@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+	<pre>
+    
+</pre>
+
+	{% for product in products %}
+
+
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div class="col">
+
+				<div class="card ">
+					<img src="/assets/frigo.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h2 class="card-title">{{ product.name }}</h2>
+						<p class="card-text">N'oubliez pas de manger vos articles avant la date.</p>
+					</div>
+					<div class="card-footer">
+
+						<div class="alert alert-success" role="alert">
+							Date d'ajout :
+							{{ product.DateCreation }}
+
+						</div>
+
+						<div class="alert alert-danger" role="alert">
+							Date Limite :
+							{{ product.DateExpiration }}
+
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endblock %}

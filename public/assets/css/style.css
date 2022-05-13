@@ -1,118 +1,94 @@
-body
-{
+body {
     background-color: #808080;
-;
 }
-.input-group>.form-control, .input-group>.form-select
-{
+.input-group > .form-control,
+.input-group > .form-select {
     border-radius: 20px;
-    color: #ECECEC;
-    
-
+    color: #ececec;
 }
-.btn-outline-secondary
-{
+.btn-outline-secondary {
     border-top-right-radius: 20px;
-    background-color: #ECECEC;
+    background-color: #ececec;
     border-bottom-right-radius: 20px;
     height: 50px;
-
 }
-.input-group
-{
+.input-group {
     width: 30%;
-    color: #ECECEC;
+    color: #ececec;
     border-radius: 20px;
     height: 50px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1.5rem;
-
 }
-.titre
-{
+.titre {
     text-align: center;
-  width : 30%;
-  border-radius: 20px;  
-  background-color: #454545;
-  height: 50px;
-  margin-left:auto;
-    margin-right:auto;
+    width: 30%;
+    border-radius: 20px;
+    background-color: #454545;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1.5rem;
-
-
 }
-.ou
-{
+.ou {
     text-align: center;
-    width : 30%;
-    margin-left:auto;
-    margin-right:auto;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1.5rem;
 }
-.bouton
-{
+.bouton {
     width: 30%;
     border-radius: 10px;
     height: 60px;
-    background-color: #F37063;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+    background-color: #f37063;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1.5rem;
-
 }
-.fridge
-{
-    Width : 30%;
-    Height : 40%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+.fridge {
+    width: 30%;
+    height: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 3rem;
-
 }
-.scanner
-{
+.scanner {
     margin-right: 2rem;
     color: whitesmoke;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-#three
-{
-    width:7rem;
-    display:flex;
+#three {
+    width: 7rem;
+    display: flex;
     float: right;
-    height:5rem;
+    height: 5rem;
 }
-#fidg
-{
-    width:77px;
-    height:77px;
+#fidg {
+    width: 77px;
+    height: 77px;
     border-radius: 100px;
     background-color: #5e5d5d;
 }
-#param
-{
-    width:77px;
-    height:77px;
+#param {
+    width: 77px;
+    height: 77px;
     border-radius: 100px;
     background-color: #5e5d5d;
-
 }
-#ajouter
-{
-    width:77px;
-    height:77px;
-    border-radius: 100px; 
+#ajouter {
+    width: 77px;
+    height: 77px;
+    border-radius: 100px;
     background-color: #5e5d5d;
-
 }
-#stat
-{
-    width:77px;
-    height:77px;
-    border-radius: 100px; 
+#stat {
+    width: 77px;
+    height: 77px;
+    border-radius: 100px;
     background-color: #5e5d5d;
 }
