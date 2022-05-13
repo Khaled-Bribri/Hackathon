@@ -18,5 +18,6 @@ return [
     'products/listproduct' => ['ProductController', 'listproduct',],
     'products/editproduct' => ['ProductController', 'editproduct', ['id']],
     'products/deleteproduct' => ['ProductController', 'deleteproduct', ['id']],
+    'Home' => ['HomeController', 'index',],
 
 ];

@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mailer extends AbstractController
 {
-    public function sendMail(string $user,string $message)
+    public function sendMail(string $user, string $message)
     {
 
         try {
@@ -41,7 +41,6 @@ class Mailer extends AbstractController
             $phpmailer->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             var_dump($phpmailer->send());
-
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
         }

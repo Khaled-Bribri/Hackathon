@@ -12,3 +12,13 @@
     padding: 1rem;
     width: 100%;
 }
+.retourmenu {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.btn {
+    padding: 1rem;
+    width: 9rem;
+}

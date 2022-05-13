@@ -6,10 +6,11 @@ use App\Model\ProductManager;
 use DateTime;
 use App\Service\Mailer;
 
-
 class ProductController extends AbstractController
 {
+
     public function addProduct()
+
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,7 +27,7 @@ class ProductController extends AbstractController
         return $this->twig->render('product/add.html.twig');
     }
 
-    public function listproduct()
+    public function listProduct()
     {
         $productManager = new ProductManager();
         $products = $productManager->selectAll();
@@ -35,7 +36,7 @@ class ProductController extends AbstractController
             $user = 'marx.hugo@gmail.com';
             $productManager = new ProductManager();
             $limitProducts = $productManager->checkLimiteDate();
-            var_dump($limitProducts);
+
             $listeProduits = '';
             foreach ($limitProducts as $item) {
                 $listeProduits .= '<li>' . $item['name'] . ' - Date limite de consommation : ' . $item['DateExpiration'] . '</li>';
@@ -52,7 +53,7 @@ class ProductController extends AbstractController
         return $this->twig->render('product/list.html.twig', ['products' => $products]);
     }
 
-    public function editproduct($id)
+    public function editProduct($id)
     {
         $productManager = new ProductManager();
         $product = $productManager->selectOneById($id);
