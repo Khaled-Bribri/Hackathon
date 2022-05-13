@@ -11,7 +11,7 @@ class ProductManager extends AbstractManager
     /**
      * Insert new item in database
      */
-    public function insert($name,$DateCreation,$DateExpiration): int
+    public function insert($name, $DateCreation, $DateExpiration): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`,`DateCreation`,`DateExpiration`) VALUES (:name,:DateCreation,:DateExpiration)");
         $statement->bindValue('name', $name, \PDO::PARAM_STR);
@@ -59,5 +59,4 @@ class ProductManager extends AbstractManager
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
-
 }
