@@ -1,0 +1,12 @@
+.pill {
+    width: 25rem;
+    letter-spacing: 2px;
+    margin: auto;
+}
+.card-title {
+    text-transform: uppercase;
+}
+.card-img-top {
+    object-fit: cover;
+    height: 300px;
+}
