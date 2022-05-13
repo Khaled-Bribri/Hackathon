@@ -13,7 +13,6 @@ class ProductManager extends AbstractManager
      */
 
     public function insert($name, $DateCreation, $DateExpiration): string
-
     {
         $statement = $this->pdo->prepare(
             "INSERT INTO " . self::TABLE .

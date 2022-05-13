@@ -1,11 +1,15 @@
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/show.css">
+{% endblock %}
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-responsive">   
-            </div>
-        </div>
-    </div>
-    <a href="/products/addproduct" class="btn btn-primary">Add Product</a>
+
+    <div class="card" style="width: 80%;">
+  <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-responsive">
+  <div class="card-body">
+    <p class="card-text">{{ product.name }}</p>
+    <a href="/products/addproduct" class="btn btn-primary">Ajouter Larticle</a>
+  </div>
+</div>
+    
 {% endblock %}
