@@ -20,7 +20,7 @@ class Mailer extends AbstractController
             $phpmailer->SMTPAuth = true;
             $phpmailer->Port = 2525;
             $phpmailer->Username = '96feba9f0e4600';
-            $phpmailer->Password = '94d9bb8a1fd71a';                           //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $phpmailer->Password = '94d9bb8a1fd71a';                 
 
             //Recipients
             $phpmailer->setFrom('from@example.com', 'Mailer');

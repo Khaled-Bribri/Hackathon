@@ -23,7 +23,7 @@ class HomeController extends AbstractController
             $search = $_POST['search'];
             $product    = $api->getProduct($search);
             $productDataAsArray = $product->getData();
-            $mailer = new Mailer();
+           //$mailer = new Mailer();
            // $mailer->sendMail();
             return $this->twig->render('product/show.html.twig', ['product' => $productDataAsArray]);
         }

@@ -7,7 +7,7 @@ use DateTime;
 
 class ProductController extends AbstractController
 {
-    public function addproduct()
+    public function addProduct()
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
