@@ -22,25 +22,25 @@
 					<div class="card body  ">
 
 						<img src="/assets/frigo.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h2 class="card-title">{{ product.name }}</h2>
-							<p class="card-text">N'oubliez pas de manger vos articles avant la date.</p>
+
+						<h2 class="card-title">{{ product.name }}</h2>
+						<p class="card-text">N'oubliez pas de manger vos articles avant la date.</p>
+					</div>
+					<div class="card-footer">
+
+						<div class="alert alert-success" role="alert">
+							Date d'ajout :
+							{{ product.DateCreation }}
+
 						</div>
-						<div class="card-footer">
 
-							<div class="alert alert-success" role="alert">
-								Date d'ajout :
-								{{ product.DateCreation }}
+						<div class="alert alert-danger" role="alert">
+							Date Limite :
+							{{ product.DateExpiration }}
 
-							</div>
-
-							<div class="alert alert-danger" role="alert">
-								Date Limite :
-								{{ product.DateExpiration }}
-
-							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
-		{% endblock %}
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
