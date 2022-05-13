@@ -13,7 +13,8 @@
         "ext-pdo": "*",
         "symfony/http-client": "^6.0",
         "openfoodfacts/openfoodfacts-php": "^0.2.4",
-        "symfony/cache": "^6.0"
+        "symfony/cache": "^6.0",
+        "picqer/php-barcode-generator": "^2.2"
     },
     "require-dev": {
         "filp/whoops": "^2.14",
