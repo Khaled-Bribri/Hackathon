@@ -5,6 +5,12 @@
 body {
     background-color: #808080;
 }
+
+.mesproduits {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
 .input-group > .form-control,
 .input-group > .form-select {
     border-radius: 20px;

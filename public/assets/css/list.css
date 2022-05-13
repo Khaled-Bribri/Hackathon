@@ -17,6 +17,9 @@
     justify-content: center;
     margin: 2rem;
 }
+.retourmenu a {
+    margin-right: 3rem;
+}
 
 .btn {
     padding: 1rem;
