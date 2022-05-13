@@ -1,0 +1,14 @@
+.pill {
+    width: 25rem;
+    letter-spacing: 2px;
+    margin: auto;
+}
+.card-title {
+    text-transform: uppercase;
+
+    margin: 2rem;
+}
+.card-text {
+    padding: 1rem;
+    width: 100%;
+}
