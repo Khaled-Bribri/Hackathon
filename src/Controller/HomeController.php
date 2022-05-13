@@ -19,7 +19,9 @@ class HomeController extends AbstractController
         $psr16Cache = new Psr16Cache($psr6Cache);
         $api        = new \OpenFoodFacts\Api('food', 'fr', $logger, $httpClient, $psr16Cache);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $search = $_POST['search'];
             $product    = $api->getProduct($search);
             $productDataAsArray = $product->getData();
@@ -28,5 +30,4 @@ class HomeController extends AbstractController
             return $this->twig->render('product/show.html.twig', ['product' => $productDataAsArray]);
         }
         return $this->twig->render('Home/index.html.twig');
-    }
 }
