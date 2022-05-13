@@ -15,9 +15,9 @@ class ProductController extends AbstractController
             $productManager = new ProductManager();
             $dateCreation = new DateTime();
             $name = $_POST['name'];
-            $DateCreation = $dateCreation->format('Y-m-d H:i:s');
-            $DateExpiration = $_POST['DateExpiration'];
-            $productManager->insert($name, $DateCreation, $DateExpiration);
+            $dateCreation = $dateCreation->format('Y-m-d H:i:s');
+            $dateExpiration = $_POST['DateExpiration'];
+            $productManager->insert($name, $dateCreation, $dateExpiration);
             header('Location: /products/listproduct');
             return $this->twig->render('Home/index.html.twig');
         }
@@ -37,11 +37,13 @@ class ProductController extends AbstractController
 
             $listeProduits = '';
             foreach ($limitProducts as $item) {
-                $listeProduits .= '<li>' . $item['name'] . ' - Date limite de consommation : ' . $item['DateExpiration'] . '</li>';
+                $listeProduits .= '<li>' . $item['name'] .
+                 ' - Date limite de consommation : ' . $item['DateExpiration'] . '</li>';
             }
 
-            $message = 'Bonjour Hugo, <br>
-            Certains produits dans votre frigo arrivent au terme de leur date limite de consommation, n\'oubliez pas de les manger !
+            $message = 'Bonjour Yecin, <br>
+            Certains produits dans votre frigo arrivent au terme de leur date limite de consommation,
+             n\'oubliez pas de les manger !
             <ul>' . $listeProduits . '</ul> <br>
             Bonne journée !';
 
