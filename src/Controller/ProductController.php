@@ -8,9 +8,7 @@ use App\Service\Mailer;
 
 class ProductController extends AbstractController
 {
-
     public function addProduct()
-
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
