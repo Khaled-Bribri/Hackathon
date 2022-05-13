@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     /**
      * Display home page
      */
-public function index(): string
+    public function index(): string
     {
         $logger     = new \Monolog\Logger('test');
         $httpClient = new \GuzzleHttp\Client();
@@ -19,18 +19,13 @@ public function index(): string
         $api        = new \OpenFoodFacts\Api('food', 'fr', $logger, $httpClient, $psr16Cache);
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $search = $_POST['search'];
-    $product    = $api->getProduct($search);
-    $productDataAsArray = $product->getData();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $search = $_POST['search'];
+            $product    = $api->getProduct($search);
+            $productDataAsArray = $product->getData();
 
-    return $this->twig->render('product/show.html.twig', ['product' => $productDataAsArray]);
-}
+            return $this->twig->render('product/show.html.twig', ['product' => $productDataAsArray]);
+        }
         return $this->twig->render('Home/index.html.twig');
-<<  << <<< HEAD
     }
 }
-=======
-}
-}
->>>>>>> master
