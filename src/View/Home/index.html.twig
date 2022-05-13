@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 {% endblock %}
 {% block content %}
+
 <img class="fridge" src="/assets/images/fridge.png">
 <h3 class="titre">Recherche un article</h3>
 <div class="input-group mb-1">
@@ -37,5 +38,15 @@
 
 </div>
 
+
+
+<form action="products/showproduct" method="POST">
+    <div class="form-group">
+        <label for="title">Code Barre</label>
+        <input type="text" class="form-control" id="code barre" name="search">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="/products/listproduct"> Mes produits</a>
 
 {% endblock %}
