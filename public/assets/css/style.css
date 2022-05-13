@@ -14,7 +14,7 @@ body {
 .input-group > .form-control,
 .input-group > .form-select {
     border-radius: 20px;
-    color: #ececec;
+    color: black;
 }
 .btn-outline-secondary {
     border-top-right-radius: 20px;

@@ -1,13 +1,23 @@
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/add.css">
+{% endblock %}
 {% extends 'layout.html.twig' %}
 {% block content %}
-<h1>add product {{ product.id }}</h1>
-<form action="/products/addproduct" method="POST">
-    <input type="hidden"  name="id">
-    <input type="text" value="{{ Product.name }}" name="name">
-	<label for="text">name</label>
-	<input type="text" name="DateExpiration">
-	<label for="text">date</label>
-	<button type="submit">Submit</button>
+
+
+<div class="card" style="width: 80%;">
+  <div class="card-body">
+  <h1>add product {{ product.id }}</h1>
+
+    <form action="/products/addproduct" method="POST">
+    <input type="hidden"  name="id" class="name">
+    <input type="text" value="{{ Product.name }}" name="name" class="name" placeholder="nom de l'article" >
+	<br>
+	<input type="text" name="DateExpiration" class="date" placeholder="date d'expiration">
+	<br>
+	<button type="submit" class="button">Ajouter</button>
 </form>
+  </div>
+</div>
 
 {% endblock %}

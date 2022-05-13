@@ -1,9 +1,19 @@
 {# TODO : manage errors display #}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/add.css">
+{% endblock %}
+{% block content %}
+<div class="card" style="width: 80%;">
+<div class="card-body">
 <form action="" method="POST">
     <input type="hidden" name="id" value="{{ product.id }}">
-    <input type="text" value="{{ product.name }}" name="name">
-	<label for="name">name</label>
-	<input type="text" value="{{ product.DateExpiration }}" name="DateExpiration">
-	<label for="DateExpiration">date</label>
-	<button type="submit">Submit</button>
+    <input type="text" value="{{ product.name }}" name="name" class="name" >
+	</br>
+	<input type="text" value="{{ product.DateExpiration }}" name="DateExpiration" class="name">
+	</br>
+	<button type="submit" class="button">Modifier</button>
+
 </form>
+</div>
+</div>
+{% endblock %}
