@@ -5,8 +5,10 @@
 }
 .card-title {
     text-transform: uppercase;
+
+    margin: 2rem;
 }
-.card-img-top {
-    object-fit: cover;
-    height: 300px;
+.card-text {
+    padding: 1rem;
+    width: 100%;
 }
