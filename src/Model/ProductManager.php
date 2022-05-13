@@ -63,4 +63,10 @@ class ProductManager extends AbstractManager
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function checkLimiteDate(){
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE DateExpiration < CURDATE()");
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }

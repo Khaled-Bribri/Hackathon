@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
 	<pre>
-    
+
 </pre>
 
 	{% for product in products %}
@@ -32,4 +32,5 @@
 					</div>
 				</div>
 			{% endfor %}
+<a href="/products/listproduct?action=send_alert"><button>Recevoir alerte</button></a>
 		{% endblock %}

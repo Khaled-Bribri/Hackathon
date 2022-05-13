@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mailer extends AbstractController
 {
-    public function sendMail()
+    public function sendMail(string $user,string $message)
     {
 
         try {
@@ -20,11 +20,11 @@ class Mailer extends AbstractController
             $phpmailer->SMTPAuth = true;
             $phpmailer->Port = 2525;
             $phpmailer->Username = '96feba9f0e4600';
-            $phpmailer->Password = '94d9bb8a1fd71a';                 
+            $phpmailer->Password = '94d9bb8a1fd71a';
 
             //Recipients
-            $phpmailer->setFrom('from@example.com', 'Mailer');
-            $phpmailer->addAddress('marx.hugo@gmail.com', 'Joe User');     //Add a recipient
+            $phpmailer->setFrom('monassistant@monfrigo.fr', 'Mon Assistant');
+            $phpmailer->addAddress($user, 'Joe User');     //Add a recipient
             // $mail->addAddress('ellen@example.com');               //Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');
             // $mail->addCC('cc@example.com');
@@ -36,12 +36,12 @@ class Mailer extends AbstractController
 
             //Content
             $phpmailer->isHTML(true);                                  //Set email format to HTML
-            $phpmailer->Subject = 'Here is the subject';
-            $phpmailer->Body    = 'This is the HTML message body <b>in bold!</b>';
+            $phpmailer->Subject = 'Des produits vous attendent dans votre frigo !';
+            $phpmailer->Body    = $message;
             $phpmailer->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-            $phpmailer->send();
-            echo 'Message has been sent';
+            var_dump($phpmailer->send());
+
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
         }
