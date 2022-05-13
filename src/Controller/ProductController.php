@@ -4,10 +4,15 @@ namespace App\Controller;
 
 use App\Model\ProductManager;
 use DateTime;
+use App\Service\Mailer;
 
 class ProductController extends AbstractController
 {
+<<  << <<< HEAD
     public function addproduct()
+=======
+    public function addProduct()
+>>>>>>> master
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,6 +33,25 @@ class ProductController extends AbstractController
     {
         $productManager = new ProductManager();
         $products = $productManager->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'send_alert') {
+            $user = 'marx.hugo@gmail.com';
+            $productManager = new ProductManager();
+            $limitProducts = $productManager->checkLimiteDate();
+            var_dump($limitProducts);
+            $listeProduits = '';
+            foreach ($limitProducts as $item) {
+                $listeProduits .= '<li>' . $item['name'] . ' - Date limite de consommation : ' . $item['DateExpiration'] . '</li>';
+            }
+
+            $message = 'Bonjour Hugo, <br>
+            Certains produits dans votre frigo arrivent au terme de leur date limite de consommation, n\'oubliez pas de les manger !
+            <ul>' . $listeProduits . '</ul> <br>
+            Bonne journée !';
+
+            $mailer = new Mailer();
+            $mailer->sendMail($user, $message);
+        }
         return $this->twig->render('product/list.html.twig', ['products' => $products]);
     }
 

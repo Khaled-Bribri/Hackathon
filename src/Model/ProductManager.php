@@ -4,16 +4,22 @@ namespace App\Model;
 
 class ProductManager extends AbstractManager
 {
-    public const TABLE = 'products';
+public const TABLE = 'products';
 
 
 
     /**
      * Insert new item in database
      */
+<<  << <<< HEAD
     public function insert($name, $DateCreation, $DateExpiration): int
+=======
+    public function insert($name, $DateCreation, $DateExpiration): string
+>>>>>>> master
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`,`DateCreation`,`DateExpiration`) VALUES (:name,:DateCreation,:DateExpiration)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+        " (`name`,`DateCreation`,`DateExpiration`) VALUES (:name,:DateCreation,:DateExpiration)"
+    );
         $statement->bindValue('name', $name, \PDO::PARAM_STR);
         $statement->bindValue('DateCreation', $DateCreation, \PDO::PARAM_STR);
         $statement->bindValue('DateExpiration', $DateExpiration, \PDO::PARAM_STR);
@@ -41,7 +47,9 @@ class ProductManager extends AbstractManager
      */
     public function update(array $items): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name,`DateCreation` = now(),`DateExpiration` = :DateExpiration WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+        " SET `name` = :name,`DateCreation` = now(),`DateExpiration` = :DateExpiration WHERE id=:id"
+    );
         $statement->bindValue('id', $items['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $items['name'], \PDO::PARAM_STR);
         $statement->bindValue('DateExpiration', $items['DateExpiration'], \PDO::PARAM_STR);
@@ -59,4 +67,13 @@ class ProductManager extends AbstractManager
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
+<<<<<<< HEAD
+=======
+
+    public function checkLimiteDate(){
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE DateExpiration < CURDATE()");
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+>>>>>>> master
 }
