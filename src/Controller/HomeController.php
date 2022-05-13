@@ -24,11 +24,9 @@ class HomeController extends AbstractController
             $search = $_POST['search'];
             $product    = $api->getProduct($search);
             $productDataAsArray = $product->getData();
-            
+
             return $this->twig->render('product/show.html.twig', ['product' => $productDataAsArray]);
-    
         }
         return $this->twig->render('Home/index.html.twig');
-
 }
 }
