@@ -1,19 +1,35 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-{% for product in products %}
-<div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-            <p class="card-text">{{"name" ~" "~ product.name}}</p>
-            <p class="card-text">{{"date de création" ~" "~product.DateCreation}}</p>
-            <p class="card-text">{{" date d'expiration" ~" "~ product.DateExpiration}}</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                    <a href="/products/editproduct?id={{ product.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                    <a href="/products/deleteproduct?id={{ product.id }}" class="btn btn-sm btn-outline-secondary">delete</a>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endfor %}
-{% endblock %}
+	<pre>
+    
+</pre>
+
+	{% for product in products %}
+
+
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div class="col">
+
+				<div class="card ">
+					<img src="/assets/frigo.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h2 class="card-title">{{ product.name }}</h2>
+						<p class="card-text">N'oubliez pas de manger vos articles avant la date.</p>
+					</div>
+					<div class="card-footer">
+
+						<div class="alert alert-success" role="alert">
+							Date d'ajout :
+							{{ product.DateCreation }}
+
+						</div>
+
+						<div class="alert alert-danger" role="alert">
+							Date Limite :
+							{{ product.DateExpiration }}
+
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endblock %}
